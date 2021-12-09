@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ViewModels="clr-namespace:TuristickaAgencija.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="TuristickaAgencija.Mobile.Views.LoginPage"
+             BackgroundImageSource="slika1.png"
+            >
+    <ContentPage.BindingContext>
+        <ViewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout VerticalOptions="FillAndExpand" Padding="10">
+                <Image Source="logo.png" HeightRequest="250" WidthRequest="250"></Image>
+                <Label Text="Korisničko ime"/>
+                <Entry Text="{Binding KorisnickoIme}" HorizontalOptions="FillAndExpand"></Entry>
+                <Label Text="Lozinka"/>
+                <Entry Text="{Binding Lozinka}" IsPassword="True" HorizontalOptions="FillAndExpand"></Entry>
+                <Button Command="{Binding LoginCommand}" Text="Prijava" BackgroundColor="DarkBlue" TextColor="White"></Button>
+                <Button Clicked="Button_Clicked" Text="Registruj se ovdje!" Margin="0,20,0,0" BackgroundColor="Green" TextColor="White"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

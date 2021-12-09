@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.KomentariPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Sekcija komentara"
+                HorizontalOptions="CenterAndExpand" FontSize="13" Margin="0,10,0,0"/>
+                        <ListView ItemsSource="{Binding ListKomentari}" ItemSelected="ListView_ItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Padding="10">
+
+                                            <Label Text="{Binding Sadrzaj}"
+                                
+                                LineBreakMode="NoWrap" 
+                                
+                                FontSize="16" />
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Vrijeme:" FontSize="15"></Label>
+                                                <Label Text="{Binding Vrijeme}" 
+                                
+                                LineBreakMode="NoWrap"
+                               
+                                FontSize="13" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Putovanje:" FontSize="15"></Label>
+                                                <Label Text="{Binding Putovanje}" FontSize="15"
+                                
+                                LineBreakMode="NoWrap"
+                               
+                                 />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.UplatePage">
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <ScrollView>
+                <ListView ItemsSource="{Binding ListUplate}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+
+                                    <Label Text="{Binding RezervacijaPodaci}"
+                               
+                                LineBreakMode="NoWrap" 
+                               
+                                FontSize="16" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Iznos:" FontSize="15"></Label>
+                                        <Label Text="{Binding Iznos}" 
+                              
+                                LineBreakMode="NoWrap"
+                               
+                                FontSize="13" />
+
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Datum uplate:" FontSize="15"></Label>
+                                        <Label Text="{Binding DatumUplate}" 
+                                
+                                LineBreakMode="NoWrap"
+                               
+                                FontSize="13" />
+
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+                <!--<StackLayout>
+                    <Button Text="Nazad!"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnButtonClicked" />
+                </StackLayout>-->
+                
+            </ScrollView>
+
+            <!--<Button Text="Nazad" Clicked="Button_Clicked"  BackgroundColor="DarkBlue" TextColor="White"></Button>-->
+
+            <ImageButton Source="backbutton.png"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Start"
+                    Clicked="OnImageButtonClicked"
+                         
+                    HeightRequest="40" WidthRequest="50"/>
+            <!--<Button Text="Nazad"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                Clicked="OnButtonClicked" 
+                BackgroundColor="YellowGreen"/>-->
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
+    

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.TerminKomentariOcjenaPage">
+    <ContentPage.Content>
+
+        <!--<ScrollView>-->
+
+        <StackLayout Orientation="Vertical" Padding="20">
+
+            <Label Text="{Binding Putovanje.Putovanje}" FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"></Label>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="BROJ NOĆENJA:" FontSize="14"></Label>
+                <Label Text="{Binding Putovanje.VrstaPutovanja}" FontSize="15"  FontAttributes="Bold"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="OCJENA:"  FontSize="14"></Label>
+                <Label  Text="{Binding ProsjecnaOcjena}"  FontSize="15" FontAttributes="Bold"  ></Label>
+            </StackLayout>
+            <StackLayout Margin="0,10,0,0">
+                <Label Text="KOMENTARI" FontSize="13" HorizontalOptions="Center"></Label>
+                <ListView ItemsSource="{Binding ListKomentari}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10" BackgroundColor="LightGray" Margin="3">
+
+                                    <Label Text="{Binding Sadrzaj}"
+                                
+                                LineBreakMode="NoWrap" 
+                                
+                                FontSize="16" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Korisnik:" FontSize="13"></Label>
+                                        <Label Text="{Binding PutnikKorisnik}" FontAttributes="Italic"
+                                
+                                LineBreakMode="NoWrap"
+                                
+                                FontSize="15" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Vrijeme:" FontSize="13"></Label>
+                                        <Label Text="{Binding Vrijeme}" 
+                                
+                                LineBreakMode="NoWrap"
+                                
+                                FontSize="15" FontAttributes="Italic" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout>
+                    <Button Text="Ostavi komentar..." Clicked="Button_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <!--</ScrollView>-->
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.KomentarOcjenaDodajPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout  Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Ostavite komentar:" FontAttributes="Italic"></Label>
+                    <Editor Text="{Binding KomentarSadrzaj}" HeightRequest="100"></Editor>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Vaša ocjena:" FontAttributes="Italic"></Label>
+                    <Picker ItemsSource="{Binding ListOcjene}" ItemDisplayBinding="{Binding VrijednostBrojcano}" SelectedItem="{Binding Ocjena}"></Picker>
+                </StackLayout>
+                <StackLayout Padding="20">
+                    <Button Text="OK" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" ></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

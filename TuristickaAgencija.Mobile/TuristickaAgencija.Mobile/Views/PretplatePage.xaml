@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.PretplatePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Pretplati se na ponuđene vrste putovanja:" FontAttributes="Italic"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Picker ItemsSource="{Binding ListVrstaPutovanja}" ItemDisplayBinding="{Binding Oznaka}" HorizontalOptions="FillAndExpand" SelectedItem="{Binding Vrsta}"></Picker>
+                    <Button Text="Dodaj"  Clicked="Button_Clicked_1"  HeightRequest="40" WidthRequest="70" BackgroundColor="White" ></Button>
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Margin="5,10,5,5">
+                <Label Text="VAŠE PRETPLATE" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+            </StackLayout>
+
+            <StackLayout>
+                <ListView ItemsSource="{Binding ListPretplate}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HeightRequest="50" BackgroundColor="Beige" Padding="20" Orientation="Horizontal" Margin="5">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                        <Label Text="Vrsta putovanja:" FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding VrstaPutovanja}" FontSize="18" FontAttributes="Bold"></Label>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        
+                                        <Button Text="Ukloni"  Clicked="Button_Clicked"  BackgroundColor="Beige" HeightRequest="40" WidthRequest="70" HorizontalOptions="End"></Button>
+                                        
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

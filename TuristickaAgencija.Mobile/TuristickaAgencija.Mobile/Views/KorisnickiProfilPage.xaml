@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters" xmlns:viewModel="clr-namespace:TuristickaAgencija.Mobile.ViewModels"
+             x:Class="TuristickaAgencija.Mobile.Views.KorisnickiProfilPage">
+    <ContentPage.BindingContext>
+        <viewModel:KorisnickiProfilViewModel></viewModel:KorisnickiProfilViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" >
+
+                <!--<StackLayout Padding="20">
+
+
+                </StackLayout>-->
+                <StackLayout  HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="user.png" HeightRequest="200" WidthRequest="200"></Image>
+                        <Label Text="MOJ PROFIL" HorizontalOptions="Center"  FontSize="Subtitle" FontAttributes="Italic"></Label>
+
+                    </StackLayout>
+
+                    <StackLayout  HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+
+                        <Label Text="Ime" FontAttributes="Italic"></Label>
+
+                        <Entry Text="{Binding Ime}" IsReadOnly="True" BackgroundColor="#8FAADC" TextColor="Black"></Entry>
+
+                        <Label Text="Prezime" FontAttributes="Italic"></Label>
+
+                        <Entry Text="{Binding Prezime}" IsReadOnly="True" BackgroundColor="#8FAADC"  TextColor="Black"></Entry>
+
+                    </StackLayout>
+                </StackLayout>
+
+
+                <Button  Text="Uredi profil" BackgroundColor="Gray" HorizontalOptions="FillAndExpand"
+                    TextColor="White" BorderColor="LightGray" Clicked="Button_Clicked"></Button>
+
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

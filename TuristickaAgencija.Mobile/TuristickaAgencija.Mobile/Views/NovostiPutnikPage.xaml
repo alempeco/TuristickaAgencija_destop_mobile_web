@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters"
+             x:Class="TuristickaAgencija.Mobile.Views.NovostiPutnikPage">
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout>
+            <ListView ItemsSource="{Binding NovostiList}" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20" BackgroundColor="Beige" Margin="0,0,0,5">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <Image Source="{Binding Slika,Converter={StaticResource imgConv}}" WidthRequest="450" ></Image>
+                                </StackLayout>
+                                <StackLayout  Margin="0,0,0,10">
+                                    <Label Text="{Binding Naslov}"
+                                       
+                                      LineBreakMode="NoWrap"
+                                     
+                                       
+                                      
+                                       FontSize="20"
+                                       
+                                       
+                                 />
+                                    <Label Text="{Binding Sadrzaj}"
+                                       
+                                      LineBreakMode="NoWrap"
+                                     
+                                       
+                                      
+                                       FontSize="20"
+                                       
+                                       
+                                 />
+                               
+                               
+                                    <Label Text="Pročitaj više..." FontAttributes="Italic" TextDecorations="Underline" FontSize="12">
+
+                                    </Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

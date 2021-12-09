@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:TuristickaAgencija.Mobile.ViewModels"
+             x:Class="TuristickaAgencija.Mobile.Views.KorisnickiProfilUrediPage">
+    <ContentPage.BindingContext>
+        <viewmodels:KorisnickiProfilUrediViewModel></viewmodels:KorisnickiProfilUrediViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView BackgroundColor="White">
+
+                <StackLayout  HorizontalOptions="FillAndExpand" Padding="10">
+
+
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Image Source="user.png" HeightRequest="150" WidthRequest="150"></Image>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand">
+
+
+                        <Label Text="Ime"></Label>
+                        <Entry  x:Name="Ime" Text="{ Binding Ime}" Placeholder="Ime"></Entry>
+
+
+                        <Label x:Name="Imegreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                        <Label Text="Prezime"></Label>
+                        <Entry x:Name="Prezime" Text="{ Binding Prezime}" Placeholder="Prezime"></Entry>
+
+                        <Label x:Name="Prezimegreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+
+
+                        <Label Text="Kontakt telefon"></Label>
+
+                        <Entry x:Name="Kontakt" Text="{ Binding Kontakt}" Placeholder="Telefon"></Entry>
+
+
+                        <Label x:Name="kontaktgreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+
+
+                        <Label Text="Email"></Label>
+
+                        <Entry x:Name="Email" Text="{ Binding Email}" Placeholder="Email"></Entry>
+
+                        <Label x:Name="emailgreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+
+
+
+                        <Label Text="Korisničko ime" ></Label>
+                        <Entry x:Name="KorisnickoIme" Text="{Binding KorisnickoIme} " Placeholder="Korisnicko ime"></Entry>
+                        <Label x:Name="korisnickoimegreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                        <Label  Text="Lozinka"></Label>
+                        <Entry x:Name="Lozinka" Text="{Binding Lozinka}" IsPassword="True" Placeholder="Lozinka"></Entry>
+                        <Label x:Name="lozinkagreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                        <Label  Text="Potvrda lozinke"></Label>
+                        <Entry x:Name="PotvrdaLozinke" Text="{Binding PotvrdaLozinke}" IsPassword="True" Placeholder="Potvrda lozinke"></Entry>
+                        <Label x:Name="Lozinkapotvrdagreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+                        <StackLayout Padding="0,15,0,0">
+                            <Button  Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" BackgroundColor="#e7e7e7"  Text="Sačuvaj izmjene!" TextColor="White"></Button>
+                            <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <ImageButton Source="backbutton.png"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Start"
+                    Clicked="OnImageButtonClicked"
+                         
+                    HeightRequest="40" WidthRequest="50"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewModels="clr-namespace:TuristickaAgencija.Mobile.ViewModels"
+             x:Class="TuristickaAgencija.Mobile.Views.TrenutneRezervacijePage">
+    <ContentPage.BindingContext>
+        <viewModels:RezervacijeViewModel></viewModels:RezervacijeViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Padding="5,5,15,5" >
+                <Label Text="REZERVACIJE" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"></Label>
+                <Label IsVisible="{Binding RezervacijeMessage}" Text="Nemate aktuelnih rezervacija!" BackgroundColor="IndianRed" TextColor="White" FontSize="15" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" Margin="0,20,0,0"></Label>
+                <Button Text="Historija mojih putovanja" Clicked="Button_Clicked" BackgroundColor="DarkBlue" TextColor="White" Margin="30,0,30,50" ></Button>
+                <Label Text="Otkazivanje vršite klikom na rezervaciju." FontAttributes="Italic" FontSize="11" HorizontalOptions="Center"></Label>
+
+                <ListView ItemsSource="{Binding ListRezervacije}" ItemSelected="ListView_ItemSelected" SelectedItem="{Binding TerminKoment}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="15" BackgroundColor="LightBlue" Margin="10">
+                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding PutovanjePodaci}"
+                             
+                                LineBreakMode="NoWrap" 
+                                
+                                FontSize="16" />
+                                        <Label Text="{Binding TerminPutovanjaPodaci}" 
+                                LineBreakMode="NoWrap"
+                                
+                                FontSize="15" />
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Vrijeme rezervacije: "></Label>
+                                            <Label Text="{Binding Vrijeme}" 
+                                LineBreakMode="NoWrap"
+                              
+                                FontSize="15" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <!--<Button Text="Plati online"  Clicked="Button_Clicked_1"  HeightRequest="40" WidthRequest="50" BackgroundColor="White" ></Button>-->
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+
+
+
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

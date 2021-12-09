@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.ZaposlenikUplatePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Odaberi termin putovanja:" FontAttributes="Italic"></Label>
+                <Picker ItemsSource="{Binding ListTermini}" ItemDisplayBinding="{Binding TerminPutovanjaPodaci}" SelectedItem="{Binding TerminSelected}"></Picker>
+            </StackLayout >
+            <StackLayout IsVisible="{Binding TerminVisible}">
+                <Label Text="Uplaćeno ukupno: " FontAttributes="Italic"></Label>
+                <Entry Text="{Binding Uplaceno}" IsReadOnly="True"></Entry>
+                <Label Text="Nije uplaćeno: " FontAttributes="Italic"></Label>
+                <Entry Text="{Binding NijeUplaceno}"  IsReadOnly="True"></Entry>
+
+            </StackLayout>
+            <!--<ScrollView>-->
+            <ListView ItemsSource="{Binding ListUplate}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+
+                                <Label Text="{Binding RezervacijaPodaci}"
+                                
+                                LineBreakMode="NoWrap" 
+                              
+                                FontSize="16" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Iznos:" FontSize="15"></Label>
+                                    <Label Text="{Binding Iznos}" 
+                               
+                                LineBreakMode="NoWrap"
+                               
+                                FontSize="13" />
+
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Datum uplate:" FontSize="15"></Label>
+                                    <Label Text="{Binding DatumUplate}" 
+                               
+                                LineBreakMode="NoWrap"
+                                
+                                FontSize="13" />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <!--</ScrollView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

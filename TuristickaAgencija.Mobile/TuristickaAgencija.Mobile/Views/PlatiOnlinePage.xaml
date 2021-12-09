@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.PlatiOnlinePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+    <StackLayout>
+        <ScrollView>
+            <!--<ListView ItemsSource="{Binding ListUplate}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>-->
+                            <StackLayout Padding="10">
+
+                <Label Text="Dobrodošli u sekciju online uplate"></Label>
+                                <!--<Label Text="{Binding RezervacijaPodaci}"
+                               
+                                LineBreakMode="NoWrap" 
+                               
+                                FontSize="16" />-->
+                                <Image Source="pay.png" HeightRequest="200" WidthRequest="500"></Image>
+
+                            </StackLayout>
+                        <!--</ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>-->
+            
+
+        </ScrollView>
+        <StackLayout Orientation="Vertical" Padding="10" Margin="0">
+            <Label Text="Svrha (Broj rate, putovanje, datum polaska na putovanje)" ></Label>
+            <Entry x:Name="SvrhaEntry" Placeholder="Br rate, putovanje, datum polaska na putovanje" PlaceholderColor="Olive" >
+
+            </Entry>
+            <!--<Label x:Name="lblArticleAmount" Text="{Binding Iznos,StringFormat='Article amount: {0}'}" FontSize="25" FontAttributes="Italic"></Label>
+            <Label x:Name="lblValue" Text="{Binding Value,StringFormat='Amount: {0} KM'}" FontSize="26" FontAttributes="Italic"></Label>-->
+            <Label Text="Iznos"></Label>
+            <Entry x:Name="IznosEntry" Placeholder="Npr 50.00" PlaceholderColor="Olive">
+                  
+            </Entry>
+            <Button x:Name="Finish" Text="Uplati" Clicked="Finish_Clicked" ></Button>
+            <!--<Button x:Name="Cancel" Text="Cancel order"></Button>-->
+        </StackLayout>
+
+
+    </StackLayout>
+</ContentPage>

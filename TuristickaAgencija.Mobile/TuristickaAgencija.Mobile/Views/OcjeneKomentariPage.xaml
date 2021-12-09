@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewModels="clr-namespace:TuristickaAgencija.Mobile.ViewModels"
+             x:Class="TuristickaAgencija.Mobile.Views.OcjeneKomentariPage">
+    <ContentPage.BindingContext>
+        <viewModels:OcjeneKomentariViewModel></viewModels:OcjeneKomentariViewModel>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="White">
+            <StackLayout Margin="0,15,0,0" Orientation="Vertical" >
+                <Button Text="Prikazi komentare" Clicked="Button_Clicked" BackgroundColor="DarkCyan"  Padding="10" ></Button>
+                <Label Text="Moji komentari" FontSize="13" HorizontalOptions="Center"></Label>
+            </StackLayout>
+            <StackLayout Margin="0,30,0,0" HeightRequest="100">
+                <Button Text="Prikazi ocjene" Clicked="Button_Clicked2" BackgroundColor="DarkCyan" Padding="10"></Button>
+                <Label Text="Moje ocjene" FontSize="13" HorizontalOptions="Center"></Label>
+
+
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+
+
+</ContentPage>

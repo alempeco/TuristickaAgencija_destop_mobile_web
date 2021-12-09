@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.ZaposlenikUplateInfoPage">
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" Padding="25">
+            <Label Text="STANJE UPLATA" FontSize="13" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+            <Label Text="Broj  uplata:" FontAttributes="Italic"></Label>
+            <Entry Text="{Binding BrojUplata}" FontAttributes="Bold" Margin="0,0,0,10" BackgroundColor="LightGray" TextColor="Black" IsEnabled="False" HorizontalOptions="FillAndExpand"></Entry>
+            <Label Text="Ukupno uplaćeno:" FontAttributes="Italic"></Label>
+            <Entry Text="{Binding PlacenoSuma}" FontAttributes="Bold" Margin="0,0,0,10" BackgroundColor="LightGray" TextColor="Black" IsEnabled="False" HorizontalOptions="FillAndExpand"></Entry>
+            <Label Text="Nije uplaćeno:" FontAttributes="Italic"></Label>
+            <Entry Text="{Binding NijePlacenoSuma}" FontAttributes="Bold" Margin="0,0,0,10" BackgroundColor="LightGray" TextColor="Black" IsEnabled="False" HorizontalOptions="FillAndExpand"></Entry>
+            <Label Text="UKUPNO:" FontAttributes="Italic"></Label>
+            <Entry Text="{Binding UkupnoUplate}" FontAttributes="Bold" Margin="0,0,0,10" BackgroundColor="LightGray" TextColor="Black" IsEnabled="False" HorizontalOptions="FillAndExpand"></Entry>
+
+            <Button Text="Pregled svih uplata" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Margin="30,0,30,0" BackgroundColor="DarkBlue" TextColor="White"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

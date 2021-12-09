@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuristickaAgencija.Mobile.Views.ZaposlenikRezervacijaPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" Padding="10">
+                <Label Text="Pretraži rezervacije aktuelnih termina:" FontAttributes="Italic" Padding="10"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Picker ItemsSource="{Binding ListTermini}" ItemDisplayBinding="{Binding TerminPutovanjaPodaci}" SelectedItem="{Binding TerminSelected}" HorizontalOptions="FillAndExpand"></Picker>
+                    
+                    <Button Text="Potvrdi" BackgroundColor="White" Clicked="Button_Clicked" HeightRequest="40" WidthRequest="70"></Button>
+                    <Button Text="Osvjezi" BackgroundColor="White" Clicked="Button_Clicked_1" HeightRequest="50" WidthRequest="70"></Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <ListView ItemsSource="{Binding ListRezervacije}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="LightBlue" Margin="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Putovanje:"></Label>
+                                        <Label Text="{Binding PutovanjePodaci}"
+                             
+                                LineBreakMode="NoWrap" 
+                               
+                                FontSize="17" ></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Datum polaska:"></Label>
+                                        <Label Text="{Binding TerminPutovanjaPodaci}" 
+                                LineBreakMode="NoWrap"
+                               
+                                FontSize="15" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Vrijeme rezervacije: "></Label>
+                                        <Label Text="{Binding Vrijeme}" 
+                                LineBreakMode="NoWrap"
+                               
+                                FontSize="15" />
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

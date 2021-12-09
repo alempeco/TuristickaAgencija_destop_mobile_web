@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converters="clr-namespace:TuristickaAgencija.Mobile.Converters"
+             x:Class="TuristickaAgencija.Mobile.Views.AktivniTerminiPage">
+
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+
+                <StackLayout Margin="0,10,0,15">
+                    <Label Text="AKTUELNA PONUDA"  FontSize="12" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                </StackLayout>
+                <ListView ItemsSource="{Binding TerminiList}" ItemSelected="ListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10" Margin="3">
+
+                                    <Label Text="{Binding TerminPutovanjaPodaci}"
+                               
+                                LineBreakMode="NoWrap" 
+                               
+                                FontSize="16" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Cijena:" FontSize="15"></Label>
+                                        <Label Text="{Binding Cijena}" 
+                              
+                                LineBreakMode="NoWrap"
+                               
+                                FontSize="13" />
+                                    </StackLayout>
+                                    <Image HeightRequest="170" WidthRequest="180" Source="{Binding Slika,Converter={StaticResource imgConv}}"></Image>
+                                    <Label Text="Pročitaj više..." FontAttributes="Italic" FontSize="12" TextDecorations="Underline"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
